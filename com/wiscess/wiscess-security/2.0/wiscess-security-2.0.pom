@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.wiscess</groupId>
+  <artifactId>wiscess-security</artifactId>
+  <version>2.0</version>
+  <description>wiscess security package</description>
+  <name>wiscess security</name>
+  <url>http://www.wiscess.com.cn</url>
+	<properties>
+		<!-- github server corresponds to entry in ~/.m2/settings.xml -->
+		<github.global.server>github</github.global.server>
+		<maven.dir>D:/GitHome/mvn-repo</maven.dir><!--  -->
+		<spring-boot.version>2.0.4.RELEASE</spring-boot.version>
+		<wiscess-common.version>2.0</wiscess-common.version>
+		<wiscess-jpa.version>2.0</wiscess-jpa.version>
+	</properties>
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>utf8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>  
+        <groupId>org.apache.maven.plugins</groupId>  
+        <artifactId>maven-source-plugin</artifactId>  
+        <executions>  
+          <execution>  
+            <id>attach-sources</id>  
+            <phase>verify</phase><!--  要绑定到的生命周期的阶段 在verify之后，install之前执行下面指定的goal -->  
+            <goals>  
+              <goal>jar-no-fork</goal><!-- 类似执行mvn source:jar -->  
+            </goals>  
+          </execution>  
+        </executions>  
+      </plugin>  
+		<plugin>
+	        <artifactId>maven-deploy-plugin</artifactId>
+	        <configuration>
+	            <altDeploymentRepository>internal.repo::default::file://${maven.dir}</altDeploymentRepository>
+	        </configuration>
+	    </plugin>
+		</plugins>
+	</build>
+	<repositories>
+	<!--  -->
+        <repository>
+            <id>spring-milestone</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+        <repository>
+            <id>github</id>
+            <url>https://raw.github.com/wiscess/mvn-repo/release</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-milestone</id>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <dependencies>
+    	<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-security</artifactId>
+    		<version>${spring-boot.version}</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-tomcat</artifactId>
+    		<version>${spring-boot.version}</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-jdbc</artifactId>
+    		<version>${spring-boot.version}</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>com.wiscess</groupId>
+    		<artifactId>wiscess-common</artifactId>
+    		<version>${wiscess-common.version}</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>com.wiscess</groupId>
+    		<artifactId>wiscess-jpa</artifactId>
+    		<version>${wiscess-jpa.version}</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.springframework.security.oauth</groupId>
+    		<artifactId>spring-security-oauth2</artifactId>
+    		<version>RELEASE</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.springframework.security</groupId>
+    		<artifactId>spring-security-core</artifactId>
+    		<version>5.0.7.RELEASE</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-core</artifactId>
+    		<version>5.0.8.RELEASE</version>
+    	</dependency>
+    	<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-webmvc</artifactId>
+    		<version>5.0.8.RELEASE</version>
+    	</dependency>
+    </dependencies>
+</project>
