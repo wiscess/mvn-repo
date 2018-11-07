@@ -98,9 +98,14 @@
 			<version>0.0.9</version>
 		</dependency>
 		<dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.4</version>
+ 		</dependency>
+		<dependency>
 			<groupId>ognl</groupId>
 			<artifactId>ognl</artifactId>
-			<version>3.0.8</version>
+			<version>3.1.12</version>
 		</dependency>
 	</dependencies>
 </project>
