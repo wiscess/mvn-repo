@@ -86,7 +86,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>${spring-boot.version}</version>
-		</dependency>
+			<!-- 去除内嵌tomcat   
+			<exclusions>        
+				<exclusion>          
+					<groupId>org.springframework.boot</groupId>          
+					<artifactId>spring-boot-starter-tomcat</artifactId>        
+				</exclusion>      
+			</exclusions>-->    
+    	</dependency>    
+    	<!--添加servlet的依赖 
+    	<dependency>      
+    		<groupId>javax.servlet</groupId>      
+    		<artifactId>javax.servlet-api</artifactId>      
+    		<version>3.1.0</version>
+    	</dependency>-->   
 		<dependency>
 			<groupId>org.apache.ant</groupId>
 			<artifactId>ant</artifactId>
@@ -106,6 +119,12 @@
 			<groupId>ognl</groupId>
 			<artifactId>ognl</artifactId>
 			<version>3.1.12</version>
+		</dependency>
+		<!-- xss过滤组件 -->
+		<dependency>
+		  <groupId>org.jsoup</groupId>
+		  <artifactId>jsoup</artifactId>
+		  <version>1.9.2</version>
 		</dependency>
 	</dependencies>
 </project>
