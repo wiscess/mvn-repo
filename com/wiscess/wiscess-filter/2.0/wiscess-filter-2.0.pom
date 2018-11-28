@@ -65,6 +65,7 @@
 		</pluginRepository>
 	</pluginRepositories>
     <dependencies>
+    		<!--  
     		<dependency>
     			<groupId>org.springframework.boot</groupId>
     			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -74,11 +75,16 @@
     			<groupId>org.springframework.boot</groupId>
     			<artifactId>spring-boot-starter-security</artifactId>
     			<version>${spring-boot.version}</version>
-    		</dependency>
+    		</dependency>-->
     		<dependency>
     			<groupId>com.wiscess</groupId>
     			<artifactId>wiscess-common</artifactId>
     			<version>${wiscess-common.version}</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>org.springframework.security</groupId>
+    			<artifactId>spring-security-web</artifactId>
+    			<version>5.0.7.RELEASE</version>
     		</dependency>
     </dependencies>
 </project>
